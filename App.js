@@ -1,30 +1,31 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TextInput } from 'react-native';
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.box1}></View>
-      <View style={styles.box2}></View>
-      <View style={styles.box3}></View>
-    </View>
-  );
-}
+const [text, setText] = useState('Hello, World!');
+<View>
+<TextInput
+  style={styles.textInput}
+  value={text}
+  onChangeText={setText}
+  placeholder='Type Something Here'
+/>
+<Text>You wrote: {text}</Text>
+</View>
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1  },
-  box1: {
-    flex:1,
-    backgroundColor: 'blue'
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  box2: {
-    flex:12,
-    backgroundColor: 'red'
+  textInput: {
+    width: '88%',
+    borderWidth: 1,
+    height: 50,
+    padding: 10
   },
-  box3: {
-    flex:5,
-    backgroundColor: 'green'
+  textDisplay: {
+    height: 50,
+    lineHeight: 50
   }
-});
 
-export default App;
+});
